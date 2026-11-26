@@ -7,6 +7,9 @@ public class AirPurifier {
     static int count = 0; // class variable
     // ในคลาสมีเก็บจำนวนเครื่องกองอากาศที่มีการสร้าง
 
+    //เครื่องกรองอากาศแต่ละตัวจะสามารถ เปิด/ปิด แสดงสถานะเครื่อง และเปลี่ยนโหมดได้( variable -> mode, power)
+    //โดยในคลาสจะมี method สำหรับสร้าง serialNo ที่รับ รับ input เป็น model และได้ output ออกมาเป็น String
+
     AirPurifier(String model){ //constructor
         this.model = model;
         this.mode = "Default";
