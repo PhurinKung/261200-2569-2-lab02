@@ -44,10 +44,11 @@ public class AirPurifier {
     }
 
     static String createSerialNo(String model){
-        String serialNo = "";
+        String serialNo;
         if(model.equals("Base")) serialNo = "001";
         else if(model.equals("Mini")) serialNo = "002";
         else if(model.equals("Pro")) serialNo = "003";
+        else serialNo = "000";
         String no = String.valueOf(count);
         int len = no.length();
         while(len<4){
