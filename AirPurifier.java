@@ -1,11 +1,13 @@
 public class AirPurifier {
-    String serialNo;
-    String model;
-    String mode;
-    boolean power;
-    static int count = 0;
+    String serialNo; // instance variable
+    String model; // instance variable
+    String mode; // instance variable
+    boolean power; // instance variable
+    // เครื่องกรองอากาศ มี serialNo, model, mode และ power
+    static int count = 0; // class variable
+    // ในคลาสมีเก็บจำนวนเครื่องกองอากาศที่มีการสร้าง
 
-    AirPurifier(String model){
+    AirPurifier(String model){ //constructor
         this.model = model;
         this.mode = "Default";
         this.power = false;
@@ -14,16 +16,16 @@ public class AirPurifier {
         IO.println("Airpurifier(" + model + ") No." + serialNo + " is created");
     }
 
-    void turnOn() {
+    void turnOn() { // instance method
         power = true;
         IO.println("Airpurifier(" + model + ") No." + serialNo + " is power on");
     }
-    void turnOff() {
+    void turnOff() { // instance method
         power = false;
         IO.println("Airpurifier(" + model + ") No." + serialNo + " is power off");
     }
 
-    void changeMode(String mode){
+    void changeMode(String mode){ // instance method
         if(!power){
             IO.println("Airpurifier(" + model + ") No." + serialNo + " is not power on");
             return;
@@ -36,14 +38,14 @@ public class AirPurifier {
         IO.println("Airpurifier(" + model + ") No." + serialNo + " is on " + mode + " mode");
     }
 
-    void show(){
+    void show(){ // instance method
         String status = power ? "on" : "off";
         IO.println("Airpurifier(" + model + ") No." + serialNo +
                 " { Status: " + status + ", Mode: " + mode + " }"
         );
     }
 
-    static String createSerialNo(String model){
+    static String createSerialNo(String model){ //class method
         String serialNo;
         if(model.equals("Base")) serialNo = "001";
         else if(model.equals("Mini")) serialNo = "002";
